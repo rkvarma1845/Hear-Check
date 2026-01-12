@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 app = Flask(__name__)
-
+rahul
 def calculate_hearing_loss(heard_volume):
     normal_threshold = 20
     return normal_threshold - heard_volume
