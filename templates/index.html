@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: relative; /* Allows absolute positioning of child elements */
+            max-width: 800px; /* Maximum width for the container */
+            margin: auto; /* Center the container */
+            padding: 20px;
+            background: white; /* Background color for the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+
+        .help-link {
+            position: absolute; /* Position it relative to the container */
+            top: 10px; /* Distance from the top */
+            right: 10px; /* Distance from the right */
+        }
+
+        .help-link a {
+            text-decoration: none; /* Remove underline */
+            color: #007BFF; /* Link color */
+            font-weight: bold; /* Bold text */
+        }
+
+        h1 {
+            text-align: center; /* Center the heading */
+        }
+
+        
+
+        .analyze-button {
+            display: block; /* Make buttons block-level elements */
+            width: 200px; /* Set a fixed width */
+            margin: 20px auto; /* Center buttons */
+            padding: 10px; /* Padding for buttons */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 14px; /* Button text size */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline from links */
+            background-color: antiquewhite;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Help Page Link in top-right corner -->
+        <div class="help-link">
+            <a href="{{ url_for('help') }}">Help</a>
+        </div>
+
+        <h1>Welcome to the Hearing Assessment</h1>
+
+        <a href="{{ url_for('assessment') }}">
+            <button class="start-button">Start Hearing Assessment</button>
+        </a>
+
+        <!-- Link to the analysis page -->
+        <a href="{{ url_for('analysis') }}">
+            <button class="analyze-button">AudiologyAnalyzer</button>
+        </a>
+
+    </div>
+</body>
+
+</html>

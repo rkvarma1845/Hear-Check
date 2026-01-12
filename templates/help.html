@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Hearing Assessment Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='help-style.css') }}"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hearing Assessment Application - Help Page</h1>
+
+        <h2>Introduction</h2>
+        <p>Welcome to the <strong>Hearing Assessment Application</strong>! This tool helps you evaluate your hearing by playing a sound at various volumes and recording your ability to hear it. Follow the instructions below to complete the assessment.</p>
+
+        <h2>How to Use the Application</h2>
+        <ol>
+            <li><strong>Start the Hearing Assessment</strong>
+                <p>On the homepage, click the <strong>"Start Hearing Assessment"</strong> button. You will be directed to the assessment page.</p>
+            </li>
+
+            <li><strong>Enter Your Age</strong>
+                <p>Once on the assessment page, you will be asked to provide your age. This helps us record your hearing results accurately.</p>
+            </li>
+
+            <li><strong>Play the Sound</strong>
+                <p>After entering your age, an audio player will appear. You can click the <strong>Play</strong> button to start the sound. The default volume of the sound is <strong>10%</strong>.</p>
+            </li>
+
+            <li><strong>Adjust the Volume (Optional)</strong>
+                <p>You can adjust the volume using the <strong>Increase Volume</strong> and <strong>Decrease Volume</strong> buttons. This allows you to manually change the volume if needed. The volume will be displayed as a percentage, ranging from <strong>0%</strong> to <strong>100%</strong>.</p>
+            </li>
+
+            <li><strong>Respond to the Sound</strong>
+                <p>Once you have heard the sound, respond by clicking either:</p>
+                <ul>
+                    <li><strong>Yes, I can hear</strong> – If you can hear the sound at the current volume.</li>
+                    <li><strong>No, I cannot hear</strong> – If you cannot hear the sound.</li>
+                </ul>
+            </li>
+
+            <li><strong>Automatic Volume Increase</strong>
+                <p>If you cannot hear the sound and the volume is below 100%, the application will automatically increase the volume by <strong>10%</strong>. The process will repeat until you either hear the sound or the volume reaches <strong>100%</strong>.</p>
+            </li>
+
+            <li><strong>View Your Results</strong>
+                <p>If you can hear the sound and click <strong>Yes</strong>, you will be shown a message confirming that you can hear the sound. The volume and your age will be recorded. If the volume reaches 100% and you still cannot hear the sound, the application will suggest consulting a hearing specialist.</p>
+            </li>
+        </ol>
+
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Volume Control:</strong> Manually adjust the sound volume using the increase and decrease buttons, or the volume will adjust automatically if you cannot hear.</li>
+            <li><strong>Audio Player:</strong> Integrated audio player with controls for playing and pausing the sound.</li>
+            <li><strong>Simple User Interface:</strong> A clean and intuitive design for ease of use.</li>
+            <li><strong>Results Page:</strong> After completing the assessment, you’ll receive feedback based on your responses.</li>
+        </ul>
+
+        <h2>Troubleshooting</h2>
+        <ul>
+            <li><strong>I can't hear the sound even at 100% volume:</strong>
+                <p>If you cannot hear the sound at full volume, it is advised that you consult a hearing professional for further assistance.</p>
+            </li>
+            <li><strong>Audio not playing:</strong>
+                <p>Ensure your device is not muted, and your speakers or headphones are working correctly.</p>
+            </li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>If you encounter any issues or have further questions, feel free to reach out to our support team at <strong>support@hearingtestapp.com</strong>.</p>
+        </div>
+    </div>
+
+</body>
+</html>

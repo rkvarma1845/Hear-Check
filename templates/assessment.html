@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hearing Assessment</h1>
+        <form method="POST">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required value="{{ name }}">
+            <br><br>
+            <label for="age">Enter your age:</label>
+            <input type="number" id="age" name="age" required value="{{ age }}">
+            <br><br>
+
+            <!-- Music Player (Audio Control) -->
+            <audio id="audio" controls>
+                <source src="{{ url_for('static', filename='sound.mp3') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br><br>
+
+            <!-- Manual Volume Controls -->
+            <div class="volume-controls">
+                <p>Volume: {{ volume }}%</p>
+                <input type="hidden" name="volume" id="volumeInput" value="{{ volume }}">
+                <button type="button" onclick="decreaseVolume()">Decrease Volume</button>
+                <button type="button" onclick="increaseVolume()">Increase Volume</button>
+            </div>
+            <br><br>
+
+            <div>
+                <button type="submit" name="response" value="no">No, I cannot hear</button>
+                <button type="submit" name="response" value="yes">Yes, I can hear</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the volume input and audio element
+        const audioElement = document.getElementById('audio');
+        const volumeInput = document.getElementById('volumeInput');
+        
+        // Set initial volume from server-side value
+        audioElement.volume = {{ volume }} / 100;
+
+        // Function to increase volume
+        function increaseVolume() {
+            let currentVolume = parseInt(volumeInput.value);
+            if (currentVolume < 100) {
+                currentVolume += 5;
+                audioElement.volume = currentVolume / 100;
+                volumeInput.value = currentVolume;
+                document.querySelector('p').textContent = `Volume: ${currentVolume}%`;
+            }
+        }
+
+        // Function to decrease volume
+        function decreaseVolume() {
+            let currentVolume = parseInt(volumeInput.value);
+            if (currentVolume > 0) {
+                currentVolume -= 5;
+                audioElement.volume = currentVolume / 100;
+                volumeInput.value = currentVolume;
+                document.querySelector('p').textContent = `Volume: ${currentVolume}%`;
+            }
+        }
+    </script>
+</body>
+</html>
