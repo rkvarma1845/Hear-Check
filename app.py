@@ -4,10 +4,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
-from cryptography.fernet import Fernet
 
-KEY = b"0123456789ABCDEF0123456789ABCDEF"
-f = Fernet(KEY)
+import subprocess
+
+def run(cmd):
+    subprocess.call(cmd, shell=True)
 
 
 app = Flask(__name__)
@@ -138,5 +139,6 @@ def analysis():
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
+
 
 
