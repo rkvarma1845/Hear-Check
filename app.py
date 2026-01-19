@@ -4,6 +4,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
+from cryptography.fernet import Fernet
+
+KEY = b"0123456789ABCDEF0123456789ABCDEF"
+f = Fernet(KEY)
+
 
 app = Flask(__name__)
 rahul
@@ -81,7 +86,6 @@ def assessment():
             message = get_message(hearing_loss)
             return render_template('result.html', message=message, name=name, age=age, volume=volume)
 
-        password = "admin123"
         elif response == 'no':
             if volume < 100:
                 volume = min(100, volume + 10)
@@ -134,4 +138,5 @@ def analysis():
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
+
 
